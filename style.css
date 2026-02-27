@@ -1,0 +1,351 @@
+:root {
+    --primary: #800020;
+    /* Royal Maroon Red */
+    --primary-light: #a52a2a;
+    --secondary: #d4af37;
+    /* Gold from logo */
+    --accent: #b8926f;
+    --light: #f8f6f3;
+    --dark: #2c2c2c;
+    --white: #ffffff;
+    --success: #4a7c59;
+    --warning: #d97706;
+    --danger: #722f37;
+    --border: #e5e5e5;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --shadow-lg: rgba(0, 0, 0, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f8f6f3 0%, #e8e4df 100%);
+    color: var(--dark);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(128, 0, 32, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.app-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 2rem 3rem;
+    box-shadow: 0 4px 20px var(--shadow-lg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.brand-logo {
+    width: 15rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.login-logo {
+    width: 18rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.brand-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.5px;
+}
+
+.brand-text p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-profile {
+    text-align: right;
+    color: var(--white);
+}
+
+.user-profile .name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-logout {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Login Page Styling */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.login-box {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px var(--shadow-lg);
+    overflow: hidden;
+    max-width: 450px;
+    width: 100%;
+}
+
+.login-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 3rem 2.5rem;
+    text-align: center;
+}
+
+.login-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.login-header p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.login-body {
+    padding: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.secondary-actions {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.btn-secondary-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- DASHBOARD STYLES (RESTORED) --- */
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+}
+
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    box-shadow: 0 4px 15px var(--shadow);
+    border-left: 5px solid var(--secondary);
+}
+
+.stat-card .label {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.stat-card .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-pending {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.status-approved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Notification Container */
+.notification-container {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.notification {
+    background: var(--white);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary);
+}
